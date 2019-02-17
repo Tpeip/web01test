@@ -1,0 +1,59 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function displaytime(argument){
+			document.getElementById("demo").innerHTML=Date();
+		}
+	function mysubmit(argument){
+	var x=document.getElementById("name").value;
+	document.getElementById("demo").innerHTML=16+"volvo";
+	    if(isNaN(x)||x.replace(/(^\s*)||(\s*$)/g,"")==""){
+		alert("不是数字");
+	    }
+    }
+    </script>
+
+</head>
+<body>
+	<button type="button" onclick="displaytime()">显示日期</button>
+	<p id="demo">第一个段落</p>
+	
+	<input type="text" id="name">
+	
+	<button type="button" onclick="mysubmit()">提交</button>
+	<script type="text/javascript">
+		document.write((123).toPrecision(1)+"<br>");
+		document.write(Number("99 88")+"<br>");
+		var str = "Visit Runoob! Visit Runoob";
+		var n = str.search(/Runoob/g);
+		document.write(n+"<br>");
+		//var patt1=/e/;
+		var patt1=new RegExp("e");
+		document.write(patt1.exec("The best things in life are free"));
+		function validateForm(){
+			var x = document.forms["myForm"]["fname"].value;
+			var atops=x.indexOf("@");
+			document.write(atops);
+			var dotops=x.lastIndexOf(".");
+			document.write(dotops);
+			if(atops<1||dotops<atops+2 || dotops+2>=x.length){
+				alert("不是合法的e-mail地址");
+				return false;
+			}
+			// if(x == null || x == ""){
+			// 	alert("需要输入名字");
+			// 	return false;
+			// }
+		}
+	</script>
+	<form name="myForm" action="demo_form.php" onsubmit="return validateForm()" method="post">
+		名字：<input type="text" name="fname">
+		<input type="submit" value="提交">
+	</form>
+	<form method="post" action="#">
+		<input type="text" name="fname" required="required">
+		<input type="submit" value="提交" >
+	</form>
+
+</body>
+</html>
